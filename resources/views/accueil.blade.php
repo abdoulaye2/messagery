@@ -4,6 +4,8 @@
 
 @include('parchalse/header')
 
+<br><br>
+
 <div class="row">
 	<div class="col-md-2">
 		<i class="fa fa-user-alt text-center"></i> 

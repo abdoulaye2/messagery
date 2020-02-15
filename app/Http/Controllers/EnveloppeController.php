@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Nexmo;
 
-class AccueilController extends Controller
+class EnveloppeController extends Controller
 {
     public function __construct()
     {
@@ -14,6 +13,6 @@ class AccueilController extends Controller
 
     public function index()
     {
-        return view('accueil');
+    	return view('enveloppe');
     }
 }

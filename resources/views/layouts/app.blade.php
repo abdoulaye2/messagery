@@ -24,7 +24,9 @@
 </head>
 <body>
     <div class="container">
+
         @yield('content')
+
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

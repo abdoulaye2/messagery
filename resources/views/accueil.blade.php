@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link l" href="#" style="color: #080808;">Accueil</a>
+        <a class="nav-link l" href="{{ url('/') }}" style="color: #080808;">Accueil</a>
       </li>
       <li class="nav-item">
         <a class="nav-link l" href="#" style="color: #080808;">Enveloppe</a>

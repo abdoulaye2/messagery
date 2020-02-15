@@ -15,9 +15,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::post('/', 'Auth\LoginController@login');
 Route::post('/deconnexion', 'Auth\LoginController@logout');
 
-Route::get('/accueil', 'HomeController@index');
+Route::get('/accueil', 'AccueilController@index');
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

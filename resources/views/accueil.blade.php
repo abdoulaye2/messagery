@@ -25,6 +25,15 @@
       <li class="nav-item">
         <a class="nav-link l" href="#" style="color: #080808;">Colis</a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle l" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #080808;">
+          Administration
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item l" href="#">Gestion des utilisateurs</a>
+          <a class="dropdown-item l" href="#">Statistique</a>
+        </div>
+      </li>
     </ul>
     <form class="form-inline" method="POST" action="{{ url('/deconnexion') }}">
   	@csrf
@@ -36,7 +45,11 @@
 
 <br><br>
 <div class="row">
-	<div class="col-md-2"></div>
+	<div class="col-md-2">
+		<i class="fa fa-user-alt text-center"></i> 
+		<br>
+		<b>{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
+	</div>
 	<div class="col-md-6">
 		<marquee><h1>Bienvenue à Nijma Niger</h1></marquee>
 	</div>

@@ -1,0 +1,40 @@
+body{
+	background-color: #dd8a2a;
+}
+
+.loginh1 {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.loginbtn {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #dd8a2a;
+	width: 100%;
+}
+
+.logincadre {
+	border: 2px solid #080808;
+	padding: 15px;
+	background-color: #080808;
+}
+
+.logininp {
+	border: 2px solid #080808;
+}
+
+.car {
+	background-color: #080808;
+	height: 150px;
+	width: 100%;
+}
+
+.car h3 {
+	color: white;
+}
+
+.copy {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}

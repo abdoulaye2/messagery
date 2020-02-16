@@ -4,11 +4,18 @@
 
 @include('parchalse/header')
 
+<br><br>
+
 <div class="row">
-	<div class="col-md-4"></div>
-	<div class="col-md-4">
+	<div class="col-md-2">
+		<i class="fa fa-user-alt text-center"></i> 
 		<br>
-		<p class="copy">Formulaire d'envoyer message</p>
+		<b>{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
+	</div>
+	<div class="col-md-2"></div>
+	<div class="col-md-4">
+		<h3 class="msg">MESSAGE ENVELOPPE</h3>
+		<br>
 		<form>
 			<input type="text" name="numero" class="form-control" placeholder="Entrer les numéros séparés par une virgule.">
 			<br>
@@ -17,6 +24,7 @@
 			<button class="btn btn-dark sendbtn"><i class="fa fa-paper-plane"></i> Envoyer</button>
 		</form>
 	</div>
+	<div class="col-md-4"></div>
 </div>
 
 <br><br>

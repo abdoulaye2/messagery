@@ -63,3 +63,9 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	background-color: #080808;
 }
+
+.msg {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-align: center;
+}

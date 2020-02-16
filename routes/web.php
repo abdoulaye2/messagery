@@ -20,5 +20,8 @@ Route::get('/accueil', 'AccueilController@index');
 Route::get('/enveloppe', 'EnveloppeController@index');
 Route::post('/enveloppe', 'EnveloppeController@create');
 
+Route::get('/sachet', 'SachetController@index');
+Route::post('/sachet', 'SachetController@create');
+
 
 Auth::routes();

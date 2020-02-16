@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use App\Message;
 use App\User;
 
-class EnveloppeController extends Controller
+class SachetController extends Controller
 {
     public function __construct()
     {
@@ -18,11 +18,11 @@ class EnveloppeController extends Controller
 
     public function index()
     {
-        $messages = Message::where('user_id', '=', Auth::id())->where('type', '=', 'enveloppe')->orderBy('id', 'DESC')->limit(50)->get();
+    	$messages = Message::where('user_id', '=', Auth::id())->where('type', '=', 'sachet')->orderBy('id', 'DESC')->limit(50)->get();
 
         $i = 1;
 
-    	return view('enveloppe', compact('messages', 'i'));
+    	return view('sachet', compact('messages', 'i'));
     }
 
     public function create(MessageRequest $request)
@@ -47,7 +47,7 @@ class EnveloppeController extends Controller
 
                 $request->session()->flash('lastval', $request->num);
 
-    			return redirect('/enveloppe');
+    			return redirect('/sachet');
     		}
     	}
 
@@ -67,13 +67,12 @@ class EnveloppeController extends Controller
             'nbr_numero' => $nbrmsg,
             'date_env' => $date_msg,
             'heur' => $date->hour.':'.$date->minute.':'.$date->second,
-            'type' => 'enveloppe',
+            'type' => 'sachet',
             'user_id' => Auth::id(),
         ]);
 
         $request->session()->flash('success', 'Les messages ont bien été transmis aux destinateurs.');
 
-        return redirect('/enveloppe');
-
+        return redirect('/sachet');
     }
 }

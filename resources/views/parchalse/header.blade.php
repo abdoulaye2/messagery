@@ -13,7 +13,7 @@
                 <a class="nav-link l" href="{{ url('/enveloppe') }}" style="color: #080808;">Enveloppe</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link l" href="#" style="color: #080808;">Sachet</a>
+                <a class="nav-link l" href="{{ url('/sachet') }}" style="color: #080808;">Sachet</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link l" href="#" style="color: #080808;">Carton</a>

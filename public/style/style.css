@@ -69,6 +69,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	text-align: center;
+	color: white;
 }
 
 .ermsg {
@@ -85,4 +86,9 @@ body{
 	background-color: white;
 	color: white;
 	text-align: center;
+}
+
+.po {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
 }

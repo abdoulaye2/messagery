@@ -8,12 +8,12 @@
 
 <div class="row">
 	<div class="col-md-2">
-		<i class="fa fa-user-alt text-center"></i> 
+		<i class="fa fa-user-alt text-center po"></i> 
 		<br>
-		<b>{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
+		<b class="po">{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
 	</div>
 	<div class="col-md-6">
-		<marquee><h1>Bienvenue à Nijma Niger</h1></marquee>
+		<marquee><h1 class="po">Bienvenue à Nijma Niger</h1></marquee>
 	</div>
 </div>
 

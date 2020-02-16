@@ -25,9 +25,9 @@
 
 	<div class="row">
 		<div class="col-md-2">
-			<i class="fa fa-user-alt text-center"></i> 
+			<i class="fa fa-user-alt text-center po"></i> 
 			<br>
-			<b>{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
+			<b class="po">{{ ucfirst(Auth::user()->prenom) }} {{ ucfirst(Auth::user()->nom) }}</b>
 		</div>
 		<div class="col-md-2"></div>
 		<div class="col-md-4">
@@ -41,7 +41,7 @@
 			</form>
 		</div>
 		<div class="col-md-4">
-			<h3 class="msg">MESSAGE ENVELOPPE</h3>
+			<h3 class="msg">MESSAGE SACHET</h3>
 		</div>
 	</div>
 

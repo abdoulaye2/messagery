@@ -31,7 +31,7 @@
 	</div>
 	<div class="col-md-2"></div>
 	<div class="col-md-4">
-		<form method="POST" action="{{ url('/enveloppe') }}">
+		<form method="POST" action="{{ url('/carton') }}">
 			@csrf
 			<input type="text" name="num" class="form-control" placeholder="Entrer les numéros séparés par une virgule." value="{{ Session::get('lastval') }}">
 			<br>
@@ -41,7 +41,7 @@
 		</form>
 	</div>
 	<div class="col-md-4">
-		<h3 class="msg">MESSAGE ENVELOPPE</h3>
+		<h3 class="msg">MESSAGE CARTON</h3>
 	</div>
 </div>
 

@@ -5,11 +5,13 @@ let password = document.querySelector('#form .password');
 let div = document.createElement('div');
 div.setAttribute('class', 'alert alert-danger');
 div.setAttribute('role', 'alert');
+div.classList.add('ermsg');
 div.textContent = "Le champ nom d'utilisateur est obligatoire.";
 
 let divpass = document.createElement('div');
 divpass.setAttribute('class', 'alert alert-danger');
 divpass.setAttribute('role', 'alert');
+divpass.classList.add('ermsg');
 divpass.textContent = "Le champ mot de passe est obligatoire..";
 
 form.addEventListener("submit", function(e){

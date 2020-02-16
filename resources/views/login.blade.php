@@ -12,12 +12,12 @@
 			<form method="POST" action="{{ url('/') }}" id="form">
 				@csrf
 				@if($errors->any())
-		        <div class="alert alert-danger" role="alert">
+		        <div class="alert alert-danger ermsg" role="alert">
 		              {{ $errors->first() }}
 		        </div>
 		        @endif
 		        @if(Session::has('error'))
-		        <div class="alert alert-danger" role="alert">
+		        <div class="alert alert-danger ermsg" role="alert">
 		              Session::get('error') }}
 		        </div>
 		        @endif

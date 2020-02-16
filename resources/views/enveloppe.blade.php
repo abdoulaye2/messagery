@@ -4,7 +4,24 @@
 
 @include('parchalse/header')
 
-<br><br>
+@if($errors->any())
+	<br>
+    <div class="alert alert-danger text-center ermsg" role="alert">
+          {{ $errors->first() }}
+    </div>
+@elseif(Session::get('error'))
+	<br>
+    <div class="alert alert-danger text-center ermsg" role="alert">
+          {{ Session::get('error') }}
+    </div>
+@elseif(Session::get('success'))
+	<br>
+    <div class="alert alert-success text-center ermsg" role="alert">
+          {{ Session::get('success') }}
+    </div>
+@else
+	<br><br>
+@endif
 
 <div class="row">
 	<div class="col-md-2">
@@ -14,18 +31,6 @@
 	</div>
 	<div class="col-md-2"></div>
 	<div class="col-md-4">
-		<h3 class="msg">MESSAGE ENVELOPPE</h3>
-		<br>
-		@if($errors->any())
-	        <div class="alert alert-danger" role="alert">
-	              {{ $errors->first() }}
-	        </div>
-        @endif
-        @if(Session::has('error'))
-	        <div class="alert alert-danger" role="alert">
-	              {{ Session::get('error') }}
-	        </div>
-        @endif
 		<form method="POST" action="{{ url('/enveloppe') }}">
 			@csrf
 			<input type="text" name="num" class="form-control" placeholder="Entrer les numéros séparés par une virgule.">
@@ -35,7 +40,9 @@
 			<button class="btn btn-dark sendbtn"><i class="fa fa-paper-plane"></i> Envoyer</button>
 		</form>
 	</div>
-	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<h3 class="msg">MESSAGE ENVELOPPE</h3>
+	</div>
 </div>
 
 <br><br>

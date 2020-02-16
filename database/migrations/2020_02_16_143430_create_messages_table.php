@@ -17,8 +17,10 @@ class CreateMessagesTable extends Migration
             $table->bigIncrements('id');
             $table->text('message');
             $table->text('numero');
+            $table->integer('nbr_numero');
             $table->date('date_env');
             $table->time('heur');
+            $table->integer('user_id');
         });
     }
 

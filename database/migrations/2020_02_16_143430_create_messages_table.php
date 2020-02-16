@@ -20,6 +20,7 @@ class CreateMessagesTable extends Migration
             $table->integer('nbr_numero');
             $table->date('date_env');
             $table->time('heur');
+            $table->string('type');
             $table->integer('user_id');
         });
     }

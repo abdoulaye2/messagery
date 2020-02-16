@@ -36,12 +36,12 @@
 
 <div class="row">
 	<div class="col-md-2"></div>
-	<a href="" class="col-md-3 car" style="text-decoration: none;">
+	<a href="{{ url('/carton') }}" class="col-md-3 car" style="text-decoration: none;">
 		<br><br>
 		<h3 class="text-center carh1">Carton</h3>
 	</a>
 	<div class="col-md-2"></div>
-	<a href="#" class="col-md-3 car" style="text-decoration: none;">
+	<a href="{{ url('/colis') }}" class="col-md-3 car" style="text-decoration: none;">
 		<br><br>
 		<h3 class="text-center carh1">Colis</h3>
 	</a>

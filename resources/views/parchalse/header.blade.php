@@ -19,7 +19,7 @@
                 <a class="nav-link l" href="{{ url('/carton') }}" style="color: #080808;">Carton</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link l" href="#" style="color: #080808;">Colis</a>
+                <a class="nav-link l" href="{{ url('/colis') }}" style="color: #080808;">Colis</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle l" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #080808;">

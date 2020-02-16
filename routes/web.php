@@ -26,4 +26,7 @@ Route::post('/sachet', 'SachetController@create');
 Route::get('carton', 'CartonController@index');
 Route::post('carton', 'CartonController@create');
 
+Route::get('colis', 'ColisController@index');
+Route::post('colis', 'ColisController@create');
+
 Auth::routes();

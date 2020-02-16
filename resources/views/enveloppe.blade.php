@@ -16,10 +16,21 @@
 	<div class="col-md-4">
 		<h3 class="msg">MESSAGE ENVELOPPE</h3>
 		<br>
-		<form>
-			<input type="text" name="numero" class="form-control" placeholder="Entrer les numéros séparés par une virgule.">
+		@if($errors->any())
+	        <div class="alert alert-danger" role="alert">
+	              {{ $errors->first() }}
+	        </div>
+        @endif
+        @if(Session::has('error'))
+	        <div class="alert alert-danger" role="alert">
+	              {{ Session::get('error') }}
+	        </div>
+        @endif
+		<form method="POST" action="{{ url('/enveloppe') }}">
+			@csrf
+			<input type="text" name="num" class="form-control" placeholder="Entrer les numéros séparés par une virgule.">
 			<br>
-			<textarea class="form-control text">Bonsoir, Nous vous informions que votre colis est bien venu a destination veuillez le recuppere munis de votre piece d'identite.</textarea>
+			<textarea class="form-control text" name="msg">Bonsoir, Nous vous informions que votre colis est bien venu a destination veuillez le recuppere munis de votre piece d'identite.</textarea>
 			<br>
 			<button class="btn btn-dark sendbtn"><i class="fa fa-paper-plane"></i> Envoyer</button>
 		</form>

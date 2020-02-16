@@ -18,6 +18,7 @@ Route::post('/deconnexion', 'Auth\LoginController@logout');
 Route::get('/accueil', 'AccueilController@index');
 
 Route::get('/enveloppe', 'EnveloppeController@index');
+Route::post('/enveloppe', 'EnveloppeController@create');
 
 
 Auth::routes();

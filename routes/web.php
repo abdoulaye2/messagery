@@ -15,6 +15,8 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 Route::post('/', 'Auth\LoginController@login');
 Route::post('/deconnexion', 'Auth\LoginController@logout');
 
+Route::get('/gestion-des-utilisateurs', 'Auth\RegisterController@showRegistrationForm');
+
 Route::get('/accueil', 'AccueilController@index');
 
 Route::get('/enveloppe', 'EnveloppeController@index');

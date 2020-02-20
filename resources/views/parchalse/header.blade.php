@@ -26,7 +26,7 @@
                   Administration
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item l" href="#">Gestion des utilisateurs</a>
+                  <a class="dropdown-item l" href="{{ url('/gestion-des-utilisateurs') }}">Gestion des utilisateurs</a>
                   <a class="dropdown-item l" href="#">Statistique</a>
                 </div>
               </li>

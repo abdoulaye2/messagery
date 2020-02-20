@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('prenom');
             $table->integer('telephone');
             $table->integer('isAdmin');
+            $table->integer('bloquer');
             $table->string('username');
             $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();

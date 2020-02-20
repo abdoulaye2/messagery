@@ -16,6 +16,8 @@ Route::post('/', 'Auth\LoginController@login');
 Route::post('/deconnexion', 'Auth\LoginController@logout');
 
 Route::get('/gestion-des-utilisateurs', 'Auth\RegisterController@showRegistrationForm');
+Route::post('/create-account', 'Auth\RegisterController@register');
+Route::post('/gestion-des-utilisateurs', 'Auth\RegisterController@update');
 
 Route::get('/accueil', 'AccueilController@index');
 

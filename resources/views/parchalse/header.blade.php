@@ -21,6 +21,7 @@
               <li class="nav-item">
                 <a class="nav-link l" href="{{ url('/colis') }}" style="color: #080808;">Colis</a>
               </li>
+              @if(Auth::user()->isAdmin == 1)
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle l" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #080808;">
                   Administration
@@ -30,6 +31,7 @@
                   <a class="dropdown-item l" href="#">Statistique</a>
                 </div>
               </li>
+              @endif
             </ul>
             <form class="form-inline" method="POST" action="{{ url('/deconnexion') }}">
             @csrf

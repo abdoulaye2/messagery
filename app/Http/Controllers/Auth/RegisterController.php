@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class RegisterController extends Controller
 {
@@ -50,9 +52,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nom' => ['required', 'string', 'max:50'],
+            'prenom' => ['required', 'string', 'max:50'],
+            'telephone' => ['required', 'integer', 'digits_between:0,20'],
+            'email' => ['nullable', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6'],
         ]);
     }
 
@@ -65,9 +70,28 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'telephone' => $data['telephone'],
             'email' => $data['email'],
+            'isAdmin' => $data['role'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    protected function update(UserRequest $request)
+    {
+        User::where('id', $request->id)->update([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'telephone' => $request->telephone,
+            'isAdmin' => $request->role,
+            'email' => $request->email,
+        ]);
+
+        $request->session()->flash('success', 'Ce profile a bien été mise à jour.');
+
+        return redirect('/gestion-des-utilisateurs');
     }
 }

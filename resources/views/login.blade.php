@@ -18,7 +18,7 @@
 		        @endif
 		        @if(Session::has('error'))
 		        <div class="alert alert-danger ermsg" role="alert">
-		              Session::get('error') }}
+		              {{ Session::get('error') }}
 		        </div>
 		        @endif
 				<input type="text" name="username" class="form-control logininp username" placeholder="Veuillez entrer votre nom d’utilisateur.">

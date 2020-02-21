@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('telephone');
             $table->integer('isAdmin');
             $table->integer('bloquer');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

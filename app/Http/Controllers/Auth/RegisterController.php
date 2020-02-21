@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserIdRequest;
 
 class RegisterController extends Controller
 {
@@ -75,6 +76,7 @@ class RegisterController extends Controller
             'telephone' => $data['telephone'],
             'email' => $data['email'],
             'isAdmin' => $data['role'],
+            'bloquer' => 0,
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
@@ -93,5 +95,53 @@ class RegisterController extends Controller
         $request->session()->flash('success', 'Ce profile a bien été mise à jour.');
 
         return redirect('/gestion-des-utilisateurs');
+    }
+
+    protected function bloquer(UserIdRequest $request)
+    {
+        $id = intval($request->id);
+
+        $veri = User::where('id', $id)->exists();
+
+        if ($veri) 
+        {
+            $val = 1;
+
+            User::where('id', $id)->update(['bloquer'=>$val]);
+
+            $request->session()->flash('success', 'Ce compte utilisateur est bloqué.');
+
+            return redirect('/gestion-des-utilisateurs');
+        }
+        else
+        {
+            $request->session('error', 'Ce compte utilisateur n\'existe pas');
+
+            return redirect('/gestion-des-utilisateurs');
+        }
+    }
+
+    protected function debloquer(UserIdRequest $request)
+    {
+        $id = intval($request->id);
+
+        $veri = User::where('id', $id)->exists();
+
+        if ($veri) 
+        {
+            $val = 0;
+
+            User::where('id', $id)->update(['bloquer'=>$val]);
+
+            $request->session()->flash('success', 'Ce compte utilisateur est débloquer.');
+
+            return redirect('/gestion-des-utilisateurs');
+        }
+        else
+        {
+            $request->session('error', 'Ce compte utilisateur n\'existe pas');
+
+            return redirect('/gestion-des-utilisateurs');
+        }
     }
 }

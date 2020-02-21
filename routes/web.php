@@ -18,6 +18,8 @@ Route::post('/deconnexion', 'Auth\LoginController@logout');
 Route::get('/gestion-des-utilisateurs', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/create-account', 'Auth\RegisterController@register');
 Route::post('/gestion-des-utilisateurs', 'Auth\RegisterController@update');
+Route::post('/bloquer', 'Auth\RegisterController@bloquer');
+Route::post('/debloquer', 'Auth\RegisterController@debloquer');
 
 Route::get('/accueil', 'AccueilController@index');
 

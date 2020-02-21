@@ -32,7 +32,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header headdetaille">
-        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Detaille message</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Ajouter un utilisateur</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -112,9 +112,15 @@
 		      	@endif
 		      </td>
 		      <td>
-		      	<button class="btn btn-warning" data-toggle="modal" data-target="#pro-{{ $user->id }}"><i class="fa fa-eye"></i></button>
+		      	<button class="btn btn-dark" data-toggle="modal" data-target="#pro-{{ $user->id }}"><i class="fa fa-eye"></i></button>
 		      	<button class="btn btn-success" data-toggle="modal" data-target="#mod-{{ $user->id }}"><i class="fa fa-edit"></i></button>
-		      	<button class="btn btn-danger" data-toggle="modal" data-target="#msg"><i class="fa fa-lock"></i></button>
+		      	@if($user->isAdmin == 0)
+		      	@if($user->bloquer == 0)
+		      	<button class="btn btn-danger" data-toggle="modal" data-target="#del-{{ $user->id }}"><i class="fa fa-lock"></i></button>
+		      	@elseif($user->bloquer == 1)
+		      	<button class="btn btn-warning" data-toggle="modal" data-target="#deldeb-{{ $user->id }}"><i class="fa fa-lock-open"></i></button>
+		      	@endif
+		      	@endif
 		      </td>
 		    </tr>
 		    <!-- Modal -->
@@ -191,6 +197,54 @@
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fermer</button>
 			        <button class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="del-{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header headdetaille">
+			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Confirmation</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <p>Êtes-vous sur de vouloir bloquer le compte de cet utilisateur ?</p>
+			      </div>
+			      <form method="POST" action="{{ url('/bloquer') }}">
+			      @csrf
+			      <div class="modal-footer">
+			      	<input type="hidden" name="id" value="{{ $user->id }}">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+			        <button class="btn btn-danger">Oui</button>
+			      </div>
+			      </form>
+			    </div>
+			  </div>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="deldeb-{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header headdetaille">
+			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Confirmation</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <p>Êtes-vous sur de vouloir débloquer le compte de cet utilisateur ?</p>
+			      </div>
+			      <form method="POST" action="{{ url('/debloquer') }}">
+			      @csrf
+			      <div class="modal-footer">
+			      	<input type="hidden" name="id" value="{{ $user->id }}">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+			        <button class="btn btn-success">Oui</button>
 			      </div>
 			      </form>
 			    </div>

@@ -61,9 +61,9 @@
 			  <tbody>
 			  	@foreach($messages as $message)
 			    <tr>
-			      <th scope="row">{{ $i++ }}</th>
-			      <td>{{ $message->nbr_numero }}</td>
-			      <td>{{ $message->date_env }} {{ $message->heur }}</td>
+			      <th scope="row"><span class="badge badge-pill badge-dark">{{ $i++ }}</span></th>
+			      <td class="td">{{ $message->nbr_numero }}</td>
+			      <td class="td">{{ $message->date_env }} {{ $message->heur }}</td>
 			      <td><button class="btn btn-success" data-toggle="modal" data-target="#msg-{{ $message->id }}"><i class="fa fa-eye"></i></button></td>
 			    </tr>
 			    <!-- Modal -->

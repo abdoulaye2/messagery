@@ -28,7 +28,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item l" href="{{ url('/gestion-des-utilisateurs') }}">Gestion des utilisateurs</a>
-                  <a class="dropdown-item l" href="#">Statistique</a>
+                  <a class="dropdown-item l" href="{{ url('/statistique') }}">Statistique</a>
+                  <a class="dropdown-item l" href="">Configuration</a>
                 </div>
               </li>
               @endif

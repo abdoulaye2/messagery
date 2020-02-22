@@ -54,6 +54,20 @@ class CartonController extends Controller
 
         $nbrmsg = count($newtab);
 
+        /*$j = 0;
+
+        while ($j < $nbrmsg) 
+        {
+            //dd($newtab[$j]);
+            Nexmo::message()->send([
+                'to'   => "+227$newtab[$j]",
+                'from' => 'Nijma',
+                'text' => 'Bonsoir, Votre colis est bien arrive vous pourrez passer le recupere munis de votre piece d\'identite. Merci d\'avance'
+            ]);
+
+            $j++;
+        }*/
+
     	$numero = implode(',', $newtab);
 
         $date = Carbon::now();

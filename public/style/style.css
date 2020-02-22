@@ -102,3 +102,37 @@ body{
 	width: 100%;
 	font-weight: bold;
 }
+
+.notfind {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.err {
+	margin-top: 300px;
+}
+
+.statbtn {
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #080808;
+	width: 100%;
+	font-weight: bold;
+}
+
+.statbtn:hover {
+	color: white;
+}
+
+.card-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+.td {
+	font-weight: bold;
+}
+
+.badge {
+	padding: 7px;
+}

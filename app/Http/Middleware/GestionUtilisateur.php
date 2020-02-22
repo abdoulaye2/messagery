@@ -22,7 +22,7 @@ class GestionUtilisateur
         }
         else
         {
-            return redirect('/');
+            return redirect('/404');
         }
     }
 }

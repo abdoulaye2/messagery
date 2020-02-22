@@ -54,9 +54,9 @@ class EnveloppeController extends Controller
 
         $nbrmsg = count($newtab);
 
-        $j = 0;
+        /*$j = 0;
 
-        /*while ($j < $nbrmsg) 
+        while ($j < $nbrmsg) 
         {
             //dd($newtab[$j]);
             Nexmo::message()->send([

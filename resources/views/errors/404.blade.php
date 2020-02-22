@@ -2,6 +2,11 @@
 
 @section('content')
 
-<h1>Page note found</h1>
+<div class="row err">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<h1 class="notfind">Page non trouvée</h1>
+	</div>
+</div>
 
 @endsection

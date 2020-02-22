@@ -21,6 +21,8 @@ Route::post('/gestion-des-utilisateurs', 'Auth\RegisterController@update');
 Route::post('/bloquer', 'Auth\RegisterController@bloquer');
 Route::post('/debloquer', 'Auth\RegisterController@debloquer');
 
+Route::get('/statistique', 'StatistiqueController@index');
+
 Route::get('/accueil', 'AccueilController@index');
 
 Route::get('/enveloppe', 'EnveloppeController@index');

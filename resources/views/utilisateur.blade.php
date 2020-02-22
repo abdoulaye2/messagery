@@ -61,7 +61,7 @@
     		<select name="role" class="form-control">
     			<option value="">Sélectionner le rôle de l'utilisateur</option>
     			<option value="1">Admin</option>
-    			<option value="0">Agent</option>
+    			<option value="0" selected>Agent</option>
     		</select>
     	</div>
     	<div class="form-group">
@@ -114,7 +114,7 @@
 		      <td>
 		      	<button class="btn btn-dark" data-toggle="modal" data-target="#pro-{{ $user->id }}"><i class="fa fa-eye"></i></button>
 		      	<button class="btn btn-success" data-toggle="modal" data-target="#mod-{{ $user->id }}"><i class="fa fa-edit"></i></button>
-		      	@if($user->isAdmin == 0)
+		      	@if($user->id != Auth::user()->id)
 		      	@if($user->bloquer == 0)
 		      	<button class="btn btn-danger" data-toggle="modal" data-target="#del-{{ $user->id }}"><i class="fa fa-lock"></i></button>
 		      	@elseif($user->bloquer == 1)
@@ -156,7 +156,7 @@
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header headdetaille">
-			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Profile utilisateur</h5>
+			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-edit"></i> Modifier Profile utilisateur</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
@@ -181,6 +181,7 @@
 		        		<label class="label-control"><span class="ermsg">E-mail</span></label>
 		        		<input type="text" name="email" class="form-control" value="{{ $user->email }}" placeholder="Entrer l'adress E-mail de l'utilisateur">
 		        	</div>
+		        	@if($user->id != Auth::user()->id)
 		        	<div class="form-group">
 		        		<label class="label-control"><span class="ermsg">Role</span></label>
 		        		<select name="role" class="form-control">
@@ -193,6 +194,7 @@
 		        			@endif
 		        		</select>
 		        	</div>
+		        	@endif
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fermer</button>
@@ -207,7 +209,7 @@
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header headdetaille">
-			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-eye"></i> Confirmation</h5>
+			        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-question"></i> Confirmation</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>

@@ -78,7 +78,7 @@
 			      </div>
 			      <div class="modal-body">
 			        <p><span class="ermsg">Nombre de numéro :</span> {{ $message->nbr_numero }}</p>
-			        <p><span class="ermsg">Les numero :</span> {{ $message->numero }}</p>
+			        <p><span class="ermsg">Les numero :</span> {{ str_replace(',', ' , ', $message->numero) }}</p>
 			        <p><span class="ermsg">Date et heure d'envoie :</span> {{ $message->date_env }} <span class="ermsg">à</span> {{ $message->heur }}</p>
 			        <p><span class="ermsg">Envoyer par :</span> {{ ucfirst($message->user->prenom) }} {{ ucfirst($message->user->nom) }}</p>
 			        <hr>

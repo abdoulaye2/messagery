@@ -14,18 +14,46 @@ class StatistiqueController extends Controller
 
     public function index()
     {
-    	$env = Message::where('type', 'enveloppe');
+    	$env = Message::where('type', 'enveloppe')->get();
 
-    	$sach = Message::where('type', 'sachet');
+        $sumenv = 0;
 
-    	$car = Message::where('type', 'carton');
+        foreach ($env as $value) 
+        {
+            $sumenv = $sumenv + $value->nbr_numero;
+        }
 
-    	$col = Message::where('type', 'colis');
+    	$sach = Message::where('type', 'sachet')->get();
+
+        $sumsach = 0;
+
+        foreach ($sach as $value) 
+        {
+            $sumsach = $sumsach + $value->nbr_numero;
+        }
+
+    	$car = Message::where('type', 'carton')->get();
+
+        $sumcar = 0;
+
+        foreach ($car as $value) 
+        {
+            $sumcar = $sumcar + $value->nbr_numero;
+        }
+
+    	$col = Message::where('type', 'colis')->get();
+
+        $sumcol = 0;
+
+        foreach ($col as $value) 
+        {
+            $sumcol = $sumcol + $value->nbr_numero;
+        }
 
     	$messages = Message::limit(50)->orderBy('id', 'DESC')->get();
 
     	$i = 1;
 
-    	return view('statistique', compact('env', 'sach', 'car', 'col', 'messages', 'i'));
+    	return view('statistique', compact('sumenv', 'sumsach', 'sumcar', 'sumcol', 'messages', 'i'));
     }
 }

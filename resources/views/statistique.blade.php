@@ -19,7 +19,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Message Enveloppe</h5>
-        <a href="" class="btn statbtn">( {{ $env->count() }} ) envoyés </a>
+        <a href="" class="btn statbtn">( {{ $sumenv }} ) envoyés </a>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Message Sachet</h5>
-        <a href="" class="btn statbtn">( {{ $sach->count() }}) envoyés </a>
+        <a href="" class="btn statbtn">( {{ $sumsach }}) envoyés </a>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Message Carton</h5>
-        <a href="" class="btn statbtn">( {{ $car->count() }}) envoyés </a>
+        <a href="" class="btn statbtn">( {{ $sumcar }}) envoyés </a>
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Message Colis</h5>
-        <a href="" class="btn statbtn">( {{ $col->count() }} ) envoyés </a>
+        <a href="" class="btn statbtn">( {{ $sumcol }} ) envoyés </a>
       </div>
     </div>
   </div>
@@ -61,6 +61,7 @@
 		      <th scope="col">Type</th>
 		      <th scope="col">Date et heure d'envoie</th>
 		      <th scope="col">Envoyer par</th>
+		      <th scope="col">Role</th>
 		      <th scope="col">Menu</th>
 		    </tr>
 		  </thead>
@@ -72,6 +73,13 @@
 		      <td class="td">{{ ucfirst($message->type) }}</td>
 		      <td class="td">{{ $message->date_env }} {{ $message->heur }}</td>
 		      <td class="td">{{ ucfirst($message->user->prenom) }} {{ ucfirst($message->user->nom) }}</td>
+		      <td class="td">
+		      	@if($message->user->isAdmin == 1)
+		      	<span class="badge badge-pill badge-dark">Admin</span>
+		      	@elseif($message->user->isAdmin == 0)
+		      	<span class="badge badge-pill badge-dark">Agent</span>
+		      	@endif
+		      </td>
 		      <td><button class="btn btn-success" data-toggle="modal" data-target="#stat-{{ $message->id }}"><i class="fa fa-eye"></i></button></td>
 		    </tr>
 		    <!-- Modal -->

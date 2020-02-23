@@ -1,5 +1,5 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#"><img src="{{ asset('image/logo.png') }}"></a>
+          <a class="navbar-brand" href="{{ url('/accueil') }}"><img src="{{ asset('image/logo.png') }}"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,7 +29,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item l" href="{{ url('/gestion-des-utilisateurs') }}">Gestion des utilisateurs</a>
                   <a class="dropdown-item l" href="{{ url('/statistique') }}">Statistique</a>
-                  <a class="dropdown-item l" href="">Configuration</a>
+                  <!--<a class="dropdown-item l" href="">Configuration</a>-->
                 </div>
               </li>
               @endif
